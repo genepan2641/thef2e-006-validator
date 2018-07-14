@@ -10,13 +10,17 @@
         </div>
         <div class="appStep">
           <step-one 
-            v-if="currentStep == 1"
+            v-show="currentStep == 1"
             @next-step="nextStep()">
           </step-one>
           <step-two 
-            v-if="currentStep == 2"
+            v-show="currentStep == 2"
             @next-step="nextStep()">
           </step-two>
+          <step-three 
+            v-show="currentStep == 3"
+            @next-step="nextStep()">
+          </step-three>
           
         </div>
       </div>
@@ -28,11 +32,12 @@
 import ProgressBar from '@/components/ProgressBar.vue';
 import StepOne from '@/components/StepOne.vue';
 import StepTwo from '@/components/StepTwo.vue';
+import StepThree from '@/components/StepThree.vue';
 export default {
   name: 'App',
   data() {
     return {
-      currentStep: 2
+      currentStep: 3
     }
   },
   methods: {
@@ -46,6 +51,7 @@ export default {
     ProgressBar,
     StepOne,
     StepTwo,
+    StepThree
   }
 }
 </script>

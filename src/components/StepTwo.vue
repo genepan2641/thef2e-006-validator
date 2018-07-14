@@ -1,5 +1,5 @@
 <template>
-    <div class="stepOne">
+    <div class="stepTwo">
         <p class="title text-center mB0">General Information</p>
         <p class="subtitle text-center mT5">Tell us who you are!</p>
         
