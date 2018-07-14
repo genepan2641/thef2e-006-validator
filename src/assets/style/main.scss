@@ -1,0 +1,133 @@
+@import './_normalize.scss';
+@import './_color.scss';
+@import './spacing.scss';
+@import './button.scss';
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.pageView {
+  border-top: 3px solid $main-color;
+  padding-top: 30px;
+}
+
+.appProgressBar {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 48px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.form {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.hint {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputWrapper-warning {
+  &:after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f071';
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 17px;
+    color: $warning-color;
+  }
+  .formInput {
+    border-color: $warning-color !important;
+  }
+}
+
+.formInput {
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  height: 52px;
+  padding: 10px 20px;
+  transition: all 250ms ease-out;
+  outline: none;
+  &:focus {
+    border-color: lighten($main-color, 10%);
+  }
+  &:disabled {
+    background-color: #eee;
+    border-color: lightgray;
+  }
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $default-color;
+  opacity: 1;
+  /* Firefox */
+}
+
+.errorMsg {
+  background-color: $warning-color;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0;
+  position: absolute;
+  right: -15px;
+  top: 10px;
+  transform: translateX(100%);
+  &:before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 11px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3.5px 7px 3.5px 0;
+    border-color: transparent $warning-color transparent transparent;
+  }
+}
