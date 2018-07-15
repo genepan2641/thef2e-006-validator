@@ -1,7 +1,8 @@
 @import './_normalize.scss';
 @import './_color.scss';
-@import './spacing.scss';
-@import './button.scss';
+@import './_spacing.scss';
+@import './_button.scss';
+@import './_transition.scss';
 * {
   box-sizing: border-box;
 }
@@ -60,6 +61,10 @@ body {
 
 .flex-1 {
   flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
 }
 
 .w100 {
@@ -122,6 +127,7 @@ body {
   position: absolute;
   right: -15px;
   top: 10px;
+  z-index: 10;
   transform: translateX(100%);
   &:before {
     content: '';
