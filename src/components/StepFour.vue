@@ -74,8 +74,8 @@
                                 v-model="expireMonth" 
                                 name="expireMonth"
                                 class="w100 formInput">
-                                    <option value="" disabled>MM</option>
-                                    <option v-for="m in allSelectableMonth" :value="m" :key="m">{{ m }}</option>
+                                <option value="" disabled>MM</option>
+                                <option v-for="m in allSelectableMonth" :value="m" :key="m">{{ m }}</option>
                             </select>
                             <p v-if="errors.has('expireMonth')" class="errorMsg label">{{ errors.first('expireMonth') }}</p>
                         </div>
@@ -160,7 +160,7 @@ export default {
         },
     },
     methods: {
-        DONEStep() {
+        validateBeforeNextStep() {
             this.$validator.validate().then(res => {
                 if(res) {
                     this.$emit('next-step');

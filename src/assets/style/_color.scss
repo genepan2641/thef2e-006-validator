@@ -2,6 +2,14 @@ $main-color: #0275D8;
 $secondary-color:#BEE1FF;
 $warning-color: #F5A623;
 $default-color: #9B9B9B;
+.color-main {
+  color: $main-color;
+}
+
+.color-secondary {
+  color: $secondary-color;
+}
+
 .color-white {
   color: white;
 }

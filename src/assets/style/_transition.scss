@@ -1,8 +1,12 @@
+.fade-slow-enter,
+.fade-slow-leave-to,
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
 
+.fade-slow-enter-to,
+.fade-slow-leave,
 .fade-enter-to,
 .fade-leave {
   opacity: 1;
@@ -11,4 +15,10 @@
 .fade-enter-active,
 .fade-leave-active {
   transition: all 250ms ease-out;
+}
+
+.fade-slow-enter-active,
+.fade-slow-leave-active,
+  {
+  transition: all 400ms ease-in-out;
 }

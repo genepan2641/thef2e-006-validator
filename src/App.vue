@@ -9,22 +9,13 @@
           </progress-bar>
         </div>
         <div class="appStep">
-          <step-one 
-            v-show="currentStep == 1"
-            @next-step="nextStep()">
-          </step-one>
-          <step-two 
-            v-show="currentStep == 2"
-            @next-step="nextStep()">
-          </step-two>
-          <step-three 
-            v-show="currentStep == 3"
-            @next-step="nextStep()">
-          </step-three>
-          <step-four 
-            v-show="currentStep == 4"
-            @next-step="nextStep()">
-          </step-four>
+          <transition name="fade" mode="out-in" appear>
+            <step-one v-if="currentStep == 1" :key="1" @next-step="nextStep()"></step-one>
+            <step-two v-if="currentStep == 2" :key="2" @next-step="nextStep()"></step-two>
+            <step-three v-if="currentStep == 3" :key="3" @next-step="nextStep()"></step-three>
+            <step-four v-if="currentStep == 4" :key="4" @next-step="nextStep()"></step-four>
+            <step-done v-if="currentStep == 5" :key="5"></step-done>
+          </transition>
           
         </div>
       </div>
@@ -38,16 +29,17 @@ import StepOne from '@/components/StepOne.vue';
 import StepTwo from '@/components/StepTwo.vue';
 import StepThree from '@/components/StepThree.vue';
 import StepFour from '@/components/StepFour.vue';
+import StepDone from '@/components/StepDone.vue';
 export default {
   name: 'App',
   data() {
     return {
-      currentStep: 4
+      currentStep: 1
     }
   },
   methods: {
     nextStep() {
-      if(this.currentStep < 4) {
+      if(this.currentStep < 5) {
         this.currentStep++;
       }
     }
@@ -57,7 +49,8 @@ export default {
     StepOne,
     StepTwo,
     StepThree,
-    StepFour
+    StepFour,
+    StepDone
   }
 }
 </script>
